@@ -1,0 +1,6 @@
+export const Sizes = {
+    BOTTOM_APPBAR_HEIGHT: 64,
+    SMALL_FAB_HEIGHT: 40,
+    MEDIUM_FAB_HEIGHT: 56,
+    HEADER_HEIGHT: 300
+};

@@ -6,9 +6,9 @@
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export function useThemeColor(
-  props: { light?: string; dark?: string },
-  colorName: keyof typeof Colors.light & keyof typeof Colors.dark
+export function useThemeColor (
+  props,
+  colorName
 ) {
   const theme = useColorScheme() ?? 'light';
   const colorFromProps = props[theme];
