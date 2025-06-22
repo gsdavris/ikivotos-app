@@ -1,6 +1,6 @@
 {
 	"cli": {
-		"version": ">= 10.1.1"
+		"appVersionSource": "remote"
 	},
 	"build": {
 		"development": {
@@ -23,13 +23,11 @@
 		"preview4": {
 			"distribution": "internal"
 		},
-		"production": {}
+		"production": {
+			"autoIncrement": true
+		}
 	},
 	"submit": {
-		"production": {
-			"cli": {
-				"appVersionSource": "package"
-			}
-		}
+		"production": {}
 	}
 }

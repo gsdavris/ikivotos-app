@@ -8,8 +8,9 @@ const SearchModal = ({ children, visible, onDismiss }) => {
 				visible={visible}
 				onDismiss={onDismiss}
 				contentContainerStyle={styles.containerStyle}
-				accessibilityRole='dialog'
+				accessibilityLabel='Dialog'
 				accessibilityLiveRegion='polite'
+				accessibilityHint='Contains important information'
 				accessibilityViewIsModal>
 				{children}
 			</Modal>

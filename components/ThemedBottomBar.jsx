@@ -27,7 +27,8 @@ const ThemedBottomBar = ({ theme }) => {
 				},
 			]}
 			safeAreaInsets={{ bottom }}
-			accessibilityRole='toolbar'
+			accessible={true}
+			accessibilityRole='header'
 			accessibilityLabel={t('navigation_toolbar')}
 			elevated>
 			{router.canGoBack() && (
@@ -43,7 +44,7 @@ const ThemedBottomBar = ({ theme }) => {
 			)}
 			<View
 				style={styles.fabContainer}
-				accessibilityRole='group'
+				accessible={true}
 				accessibilityLabel={t('action_buttons')}>
 				<FAB
 					mode='elevated'
