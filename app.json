@@ -25,7 +25,8 @@
 			},
 			"infoPlist": {
 				"UIStatusBarStyle": "UIStatusBarStyleLightContent"
-			}
+			},
+			"bundleIdentifier": "gr.motify.ikivotosapp"
 		},
 		"android": {
 			"adaptiveIcon": {
