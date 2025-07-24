@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, Linking } from 'react-native';
+import { View, Image, StyleSheet, Linking, Platform } from 'react-native';
 import { Text, Button, Surface, MD3DarkTheme, List } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'expo-router';
@@ -136,7 +136,11 @@ const styles = StyleSheet.create({
 		marginTop: 20,
 		// borderRadius: theme.roundness,
 		marginHorizontal: -16,
-		marginBottom: -20,
+		marginBottom: Platform.select({
+			ios: 10,
+			android: -20,
+			default: 0, // για web ή άλλα
+		}),
 		alignItems: 'center',
 		borderTopWidth: 1,
 		borderTopColor: 'rgba(255, 255, 255, 0.2)',

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Image } from 'react-native';
+import { Image, Platform } from 'react-native';
 import { IconButton, MD3DarkTheme } from 'react-native-paper';
 import ThemedDrawerSection from '@/components/ThemedDrawerSection';
 import { Drawer } from 'expo-router/drawer';
@@ -22,7 +22,9 @@ export default function DrawerLayout() {
 		<>
 			<Drawer
 				screenOptions={{
-					drawerStyle: { backgroundColor: darkTheme.colors.background },
+					drawerStyle: {
+						backgroundColor: darkTheme.colors.background,
+					},
 					drawerContentStyle: {
 						backgroundColor: darkTheme.colors.background,
 					},
@@ -53,7 +55,13 @@ export default function DrawerLayout() {
 					name='category/[slug]'
 					options={{
 						drawerLabel: 'Category',
-						headerStyle: { backgroundColor: darkTheme.colors.background },
+						headerStyle: {
+							backgroundColor: darkTheme.colors.background,
+							height: Platform.select({
+								ios: 110,
+								android: undefined,
+							}),
+						},
 						headerTintColor: darkTheme.colors.onBackground,
 					}}
 				/>
@@ -83,12 +91,20 @@ export default function DrawerLayout() {
 						headerTitle: () => (
 							<Image
 								source={require('@/assets/images/logo.jpg')}
-								style={{ height: 32 }}
-								resizeMode='contain'
-								accessibilityLabel={t('logo_alt_text')} // Add translated alt text
+								style={{
+									height: 32,
+									resizeMode: 'contain',
+								}}
+								accessibilityLabel={t('logo_alt_text')}
 							/>
 						),
-						headerStyle: { backgroundColor: darkTheme.colors.background },
+						headerStyle: {
+							backgroundColor: darkTheme.colors.background,
+							height: Platform.select({
+								ios: 110,
+								android: undefined,
+							}),
+						},
 						headerTintColor: darkTheme.colors.onBackground,
 					}}
 				/>
@@ -97,7 +113,13 @@ export default function DrawerLayout() {
 					options={{
 						drawerLabel: 'Favorites',
 						headerTitle: t('favorites'),
-						headerStyle: { backgroundColor: darkTheme.colors.background },
+						headerStyle: {
+							backgroundColor: darkTheme.colors.background,
+							height: Platform.select({
+								ios: 110,
+								android: undefined,
+							}),
+						},
 						headerTintColor: darkTheme.colors.onBackground,
 					}}
 				/>
